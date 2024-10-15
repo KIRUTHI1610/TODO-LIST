@@ -1,0 +1,172 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font: 16px/1.8 sans-serif;
+  background-image: linear-gradient(-30deg, #E6F0FC, #BDE5D1);
+  margin: 0;
+  padding: 0;
+}
+
+.todoList {
+  box-shadow: 0 4px 16px #aaa;
+  width: 500px;
+  margin: 30px auto;
+  border-top: solid 8px teal;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.todoList > * {
+  padding: 10px 20px;
+}
+
+h1 {
+  margin: 0;
+  background: #fff;
+  line-height: 1;
+  text-align: center;
+}
+
+.add-task {
+  display: flex;
+  padding: 20px;
+  border-bottom: solid 1px #ddd;
+  background: #f9f9f9;
+}
+
+#newTaskInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#addTaskButton {
+  background: teal;
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#addTaskButton:hover {
+  background: #006666;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  counter-reset: done-items pending-items;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 15%;
+  width: 1px;
+  height: 70%;
+  border-left: solid 4px teal;
+}
+
+h2 .count {
+  border-radius: 6px;
+  display: inline-block;
+  margin-left: 10px;
+  background: teal;
+  color: #fff;
+  padding: 4px 8px;
+  min-width: 1.5em;
+  text-align: center;
+}
+
+.done {
+  order: 1;
+}
+
+.pending {
+  order: 3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-top: dashed 1px #eee;
+}
+
+.task-item:first-child {
+  border-top: none;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 15px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.task-item label {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.task-item .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-item .actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+}
+
+.task-item .actions button:hover {
+  color: #000;
+}
+
+.task-item .edit-input {
+  flex: 1;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
